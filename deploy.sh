@@ -32,7 +32,13 @@ TERMUX_PREFIX="/data/data/com.termux/files/usr"
 TERMUX_HOME="/data/data/com.termux/files/home"
 PD="$TERMUX_PREFIX/bin/proot-distro"
 TENV="PATH=$TERMUX_PREFIX/bin:$TERMUX_PREFIX/bin/applets HOME=$TERMUX_HOME"
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# su -c 下 $0 可能不可靠，加一层兜底（native 模式要读 dist/）
+SCRIPT_DIR="$(cd "$(dirname "$0")" 2>/dev/null && pwd)"
+if [ -z "${SCRIPT_DIR:-}" ] || [ ! -f "$SCRIPT_DIR/deploy.sh" ]; then
+  for c in "$TERMUX_HOME/m7h-hsr-termux" "$TERMUX_HOME/m7h" "$HOME/m7h-hsr-termux" "$HOME/m7h"; do
+    [ -f "$c/deploy.sh" ] && { SCRIPT_DIR="$c"; break; }
+  done
+fi
 
 R='\033[31m'; G='\033[32m'; Y='\033[33m'; C='\033[36m'; B='\033[1m'; N='\033[0m'
 step() { printf "\n${C}${B}==> %s${N}\n" "$*"; }

@@ -39,5 +39,15 @@ fi
 
 chmod +x "$DEST"/*.sh 2>/dev/null || true
 
-printf "\n${G}开始部署…${N}\n\n"
-exec bash "$DEST/deploy.sh"
+# 解析为绝对路径：su -c 会重置 HOME，相对/带 ~ 的路径会失效
+ABS="$(cd "$DEST" && pwd)"
+MODE="${M7H_MODE:-wine}"
+
+if [ "$(id -u)" = "0" ]; then
+  printf "\n${G}开始部署（模式: %s）…${N}\n\n" "$MODE"
+  exec bash "$ABS/deploy.sh" "$MODE"
+fi
+
+printf "\n${Y}部署需要 root，正在通过 su 提权…${N}\n"
+printf "${Y}若弹出授权提示，请允许${N}\n\n"
+su -c "bash '$ABS/deploy.sh' '$MODE'"
