@@ -3,7 +3,7 @@
 #  推送辅助脚本（在电脑上运行，不是手机）
 #
 #  用法：
-#     bash push.sh https://github.com/你的用户名/m7h-hsr-termux.git
+#     bash push.sh https://github.com/Fireworks159/hsr_ps.git
 #
 #  前提：你已经在 GitHub 网页上创建了一个空仓库（不要勾选 README）
 # ================================================================
@@ -16,7 +16,7 @@ die()  { printf "${R}  ✗ %s${N}\n" "$*"; exit 1; }
 
 REMOTE="${1:-}"
 [ -n "$REMOTE" ] || die "请传入仓库地址，例如：
-    bash push.sh https://github.com/你的用户名/m7h-hsr-termux.git"
+    bash push.sh https://github.com/Fireworks159/hsr_ps.git"
 
 cd "$(dirname "$0")" || die "无法进入脚本目录"
 [ -d .git ] || die "当前目录不是 git 仓库"

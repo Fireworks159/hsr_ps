@@ -8,9 +8,9 @@
 # ================================================================
 set -uo pipefail
 
-REPO_URL="${M7H_REPO_URL:-https://github.com/YOUR_NAME/m7h-hsr-termux.git}"
+REPO_URL="${M7H_REPO_URL:-https://github.com/Fireworks159/hsr_ps.git}"
 BRANCH="${M7H_BRANCH:-main}"
-DEST="${M7H_DIR:-$HOME/m7h-hsr-termux}"
+DEST="${M7H_DIR:-$HOME/hsr_ps}"
 
 R='\033[31m'; G='\033[32m'; Y='\033[33m'; C='\033[36m'; N='\033[0m'
 ok()   { printf "${G}  ✓ %s${N}\n" "$*"; }

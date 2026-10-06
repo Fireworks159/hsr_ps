@@ -81,13 +81,13 @@ Wine on Android 最容易失败的图形栈翻译被天然绕开了。
 ### 一行命令部署（路线 A）
 
 ```bash
-su -c "pkg install -y git && git clone --depth 1 https://github.com/YOUR_NAME/m7h-hsr-termux.git ~/m7h && bash ~/m7h/deploy.sh wine"
+su -c "pkg install -y git && git clone --depth 1 https://github.com/Fireworks159/hsr_ps.git ~/m7h && bash ~/m7h/deploy.sh wine"
 ```
 
 或者分两步：
 
 ```bash
-git clone --depth 1 https://github.com/YOUR_NAME/m7h-hsr-termux.git ~/m7h
+git clone --depth 1 https://github.com/Fireworks159/hsr_ps.git ~/m7h
 su
 bash /data/data/com.termux/files/home/m7h/deploy.sh wine
 ```
