@@ -57,7 +57,7 @@ Wine on Android 最容易失败的图形栈翻译被天然绕开了。
 - ❌ 只支持 4.6 协议
 
 **所以路线 B 只适合验证 ARM64 运行链路，不能对外服务 4.7 客户端。**
-详见 [docs/移植评估报告.md](docs/移植评估报告.md)。
+详见 [docs/assessment-report.md](docs/assessment-report.md)。
 
 ---
 
@@ -161,7 +161,7 @@ su -c "/data/data/com.termux/files/usr/bin/proot-distro login debian"
 2. 服务端目录 `Config/Logs/` 下最新日志
 3. `~/xow64 install` 的完整输出
 
-常见问题见 [docs/路线2-Box64-Wine部署指南.md](docs/路线2-Box64-Wine部署指南.md)。
+常见问题见 [docs/route2-box64-wine.md](docs/route2-box64-wine.md)。
 
 ---
 
@@ -188,9 +188,9 @@ su -c "/data/data/com.termux/files/usr/bin/proot-distro login debian"
 ├── dist/
 │   └── March7thHoney-arm64.tar.gz   # 路线 B 用的原生 ARM64 包
 ├── docs/
-│   ├── 路线2-Box64-Wine部署指南.md   # 路线 A 详解
-│   ├── 原生ARM64部署指南.md          # 路线 B 详解（含 chroot 方式）
-│   └── 移植评估报告.md               # 完整技术鉴定与可行性分析
+│   ├── route2-box64-wine.md         # 路线 A 详解
+│   ├── route1-native-arm64.md       # 路线 B 详解（含 chroot 方式）
+│   └── assessment-report.md         # 完整技术鉴定与可行性分析
 └── LICENSE
 ```
 
